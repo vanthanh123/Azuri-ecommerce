@@ -1,0 +1,62 @@
+.footer{
+    background-color: #000;
+
+    &__inner{
+        margin: 80px 0;
+    }
+
+    &__header{
+        margin: 30px 0;
+        a h2{
+            color: $txt-white;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: text;
+        }
+    }
+
+    &__content{
+        ul li{
+            padding: 10px 0;
+            color: #aaa;
+            font-size: 13px;
+            cursor: pointer;
+            transition: $transition;
+            &:hover{
+                color:$main-color;
+            }
+        }
+        h2{
+            color: $txt-white;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: text;
+        }
+
+        .social-icon{
+            @include flex(flex-start,center);
+            box-icon{
+                fill: #aaa !important;
+                margin-right: 10px;
+                margin-top: 10px;
+                cursor: pointer;
+                &:hover{
+                    fill: $main-color !important;
+                }
+            }
+        }
+
+    }
+    &__bottom{
+        padding: 40px 0;
+        border-top: 1px solid rgb(148, 147, 147);
+        @include flex(center, center);
+        font-size: 14px;
+        color: #aaa;
+        span{
+            color: $main-color;
+        }
+    }
+}

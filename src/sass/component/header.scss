@@ -1,0 +1,168 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $header-height;
+    background-color: transparent;
+    width: 100%;
+    z-index: 9999;
+
+    &.shrink {
+        height: 60px;
+        box-shadow: $box-shadow;
+        background-color: white;
+        z-index: 9999;
+    }
+
+    @include tablet {
+        height: 80px;
+
+        &.shrink {
+            height: 60px;
+        }
+    }
+
+    @include mobile {
+        height: 60px;
+
+        &.shrink {
+            height: 40px;
+        }
+
+        .header__content__left {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .header__content__center {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            min-height: 100vh;
+            background-color: #000;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: $transition;
+
+            &.active{
+                transform: translateX(0);
+            }
+            .icon-left{
+                display: block;
+                position: relative;
+                top: 30px;
+                left: 10px;
+                fill: white !important;
+            }
+
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin-top: 50px;
+
+                    a {
+                        color: $txt-white;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include flex(null, center);
+
+    &__logo {
+        @include flex(null, center);
+    }
+
+    &__icon__mobile-toggle {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+
+
+    &__nav {
+        height: 100%;
+        .icon-left{
+            display:none;
+        }
+
+        ul {
+            height: 100%;
+            @include flex(center, center);
+
+            li a {
+                margin: 0 20px;
+                font-size: 16px;
+                font-weight: 600;
+                color: $txt-black;
+                text-transform: uppercase;
+                transition: $transition;
+
+                &:hover {
+                    color: $main-color;
+                }
+
+                @include tablet {
+                    font-size: 11px;
+                    margin: 0 10px;
+                }
+            }
+
+            li.active a {
+                color: $main-color;
+
+            }
+        }
+    }
+
+    &__right {
+        height: 100%;
+        @include flex(flex-end, center);
+
+        & div {
+            margin-left: 16px;
+
+            @include tablet {
+                margin: 0 10px;
+            }
+
+            box-icon {
+                @include tablet {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .cart {
+            position: relative;
+
+            span {
+                display: block;
+                text-align: center;
+                line-height: 20px;
+                font-weight: 600;
+                width: 20px;
+                height: 20px;
+                background-color: $main-color;
+                font-size: 13px;
+                color: $txt-white;
+                position: absolute;
+                top: -10px;
+                right: -5px;
+                border-radius: 50%;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,35 @@
+.category{
+    margin-top: -100px;
+    position: relative;
+    z-index: 999;
+
+    @include tablet{
+        margin-top: -60px;
+    }
+
+     @include mobile{
+        margin-top: -40px;
+    }
+
+    &__header{
+        @include flex(center,center);
+        padding: 20px 0;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $txt-black;
+        background-color:#fff;
+    }
+
+    &__body{
+        overflow: hidden;
+        img{
+       
+            transition: $transition;
+        }
+        img:hover{
+            transform: rotate(2deg) scale(1.1);
+        }
+    }
+
+}

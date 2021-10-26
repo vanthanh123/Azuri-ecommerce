@@ -1,0 +1,179 @@
+.product-card {
+    text-align: center;
+
+    &__header {
+        padding-top: 130%;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+
+        &__img {
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &:nth-child(1) {
+                    opacity: 1;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transition: $transition;
+                }
+            }
+        }
+
+        &:hover img {
+            &:nth-child(1) {
+                opacity: 0;
+                transition: $transition;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+            }
+        }
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            z-index: 99;
+            opacity: 0;
+            transform: translateX(80px);
+            transition: $transition;
+            cursor: pointer;
+
+            & div {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: white;
+                @include flex(center, center);
+                margin-bottom: 10px;
+                transition: $transition;
+
+                @include tablet{
+                    width: 40px;
+                    height: 40px;
+                    margin-bottom: 8px;
+                }
+
+                @include mobile{
+                    width: 30px;
+                    height: 30px;
+                    margin-bottom: 4px;
+                }
+                &:hover {
+                    background-color: $main-color;
+
+                    box-icon {
+                        fill: white;
+                    }
+                }
+
+            }
+
+        }
+
+        &__button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: $transition;
+        }
+
+        &__label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            font-size: 13px;
+            color: $txt-white;
+            @include flex (center, center);
+            flex-direction: row;
+
+            
+
+            & div {
+                text-align: center;
+                width: 60px;
+                height: 28px;
+                line-height: 28px;
+                margin-right: 4px;
+
+                @include tablet{
+                    width: 54px;
+                    height: 24px;
+                line-height: 24px;
+
+                }
+
+                @include mobile{
+                    width: 46px;
+                    height: 20px;
+                    line-height: 22px;
+
+                }
+            }
+
+            .label-sale {
+                background-color: $txt-black;
+            }
+
+            .label-new {
+                background-color: $main-color;
+            }
+        }
+
+        &:hover &__icon {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        &:hover &__button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__body {
+        &>*~* {
+            margin: 20px 0;
+        }
+
+        &__title {
+            font-size: 16px;
+            font-weight: bold;
+            color: $txt-black;
+            transition: $transition;
+        }
+
+        &__title:hover {
+            color: $main-color;
+        }
+
+        &__price {
+            font-size: 13px;
+            @include flex(center, center);
+
+            .price-old {
+                color: #777;
+                margin-right: 8px;
+                font-weight: bold;
+                text-decoration: line-through;
+            }
+
+            .price-new {
+                color: $main-color;
+                font-weight: bold;
+                text-decoration: none;
+            }
+        }
+    }
+}
