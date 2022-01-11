@@ -26,7 +26,7 @@ img{
 }
 
 .main{
-    // margin-top: $header-height;
+    margin-top: $header-height;
     min-height: 100%;
     margin-bottom: 2rem;
 
@@ -36,5 +36,15 @@ img{
 
     @include mobile{
         margin-top: 60px;
+    }
+}
+
+@each $color, $val in $colors {
+    .color-#{$color}{
+        color: $val;
+    }
+
+    .bg-#{$color}{
+        background-color:$val;
     }
 }

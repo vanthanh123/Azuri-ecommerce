@@ -18,6 +18,14 @@ const LogoBrand = (props) => {
                         autoplay={{
                             delay: 2500,
                         }}
+                        breakpoints={{
+                            "0" : {
+                                "slidesPerView" : 3,
+                            },
+                            "600": {
+                                "slidesPerView" : 4,
+                            }
+                        }}
                     >
                         {props.data.map((item, i) => (
                                 <SwiperSlide key={i}>

@@ -53,6 +53,9 @@
                 @include flex(center, center);
                 margin-bottom: 10px;
                 transition: $transition;
+                i{
+                    font-size: 20px;
+                }
 
                 @include tablet{
                     width: 40px;
@@ -67,9 +70,8 @@
                 }
                 &:hover {
                     background-color: $main-color;
-
-                    box-icon {
-                        fill: white;
+                    i {
+                        color: white;
                     }
                 }
 

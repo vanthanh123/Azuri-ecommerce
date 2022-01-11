@@ -4,12 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./sass/index.scss";
 import Layout from "./component/Layout";
-import 'boxicons';
+import { Provider } from "react-redux";
+import { store } from "./redux/store"
 
 
 ReactDOM.render(
-  <React.StrictMode>
+    <Provider store={store}>
     <Layout />
-  </React.StrictMode>,
+    </Provider>
+,
   document.getElementById('root')
 );

@@ -5,6 +5,8 @@ $txt-black: #222;
 $txt-white: #fff;
 
 $header-height: 100px;
+$header-height-tablet: 80px;
+$header-height-mobile: 60px;
 
 $gradient: linear-gradient(-45deg, #50cadf, #f59ca0);
 
@@ -12,6 +14,15 @@ $font-family: "Heebo", sans-serif;
 
 $box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 $transition: all ease 0.35s;
+
+$colors: (
+    "white": white,
+    "black": black,
+    "red": red,
+    "yellow": yellow,
+    'blue': blue,
+    'pink': #f59ca0
+);
 
 $mobile-width: 600px;
 $tablet-width: 1025px;

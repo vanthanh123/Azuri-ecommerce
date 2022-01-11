@@ -19,12 +19,18 @@
         text-transform: uppercase;
         color: $txt-black;
         background-color:#fff;
+        @include tablet{
+            font-size: 20px;
+        }
+        @include mobile{
+            font-size: 16px;
+        }
     }
 
     &__body{
         overflow: hidden;
         img{
-       
+            width: 100%;
             transition: $transition;
         }
         img:hover{

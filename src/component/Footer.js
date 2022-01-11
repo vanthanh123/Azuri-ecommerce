@@ -67,22 +67,10 @@ const Footer = () => {
                             <div className="footer__content">
                                 <h2>Theo dõi chúng tôi</h2>
                                 <div className="social-icon">
-                                    <box-icon
-                                        type="logo"
-                                        name="facebook"
-                                    ></box-icon>
-                                    <box-icon
-                                        name="twitter"
-                                        type="logo"
-                                    ></box-icon>
-                                    <box-icon
-                                        name="dribbble"
-                                        type="logo"
-                                    ></box-icon>
-                                    <box-icon
-                                        name="linkedin"
-                                        type="logo"
-                                    ></box-icon>
+                                <i className='bx bxl-facebook' ></i>
+                                <i className='bx bxl-twitter' ></i>
+                                <i className='bx bxl-dribbble' ></i>
+                                <i className='bx bxl-linkedin' ></i>
                                 </div>
                             </div>
                         </div>

@@ -7,7 +7,7 @@ const Testimonial = (props) => {
             <div className="container">
                 <div className="row">
                     {props.data.map((item, i) => (
-                        <div key={i} className="col-md-4">
+                        <div key={i} className="col-lg-4 col-md-6">
                             <div  className="testimonial__inner">
                                 <img src={item.img} alt="" />
                                 <div className="content">{item.content}</div>
