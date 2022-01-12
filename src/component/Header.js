@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useCallback } from "react";
+import { useState,useEffect, useRef, useCallback } from "react";
+import { useSelector } from "react-redux";
 
 import logo from "../assets/images/logo.png";
 
@@ -14,8 +15,8 @@ const navbar = [
         path: "/catalog",
     },
     {
-        display: "Bài Viết",
-        path: "/blog",
+        display: "Giỏ hàng",
+        path: "/cart",
     },
     {
         display: "Liên hệ",
@@ -24,6 +25,12 @@ const navbar = [
 ];
 
 const Header = () => {
+    const cartItems = useSelector((state) => state.productShipping.value);
+    const [countCartItem, setCountCartItem] = useState(0);
+
+    useEffect(() => {
+        setCountCartItem(cartItems.length)
+    }, [cartItems]);
     // lấy pathname
     const { pathname } = useLocation();
     // kiểm tra xem trang nào đang active
@@ -103,8 +110,10 @@ const Header = () => {
                                     <i className="bx bx-cog"></i>
                                 </div>
                                 <div className="cart">
-                                    <span>0</span>
+                                <Link to="/cart">
+                                    <span>{countCartItem}</span>
                                     <i className="bx bx-shopping-bag"></i>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

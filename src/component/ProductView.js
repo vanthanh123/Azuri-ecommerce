@@ -3,8 +3,14 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import Button from "../component/Button";
 import { withRouter } from 'react-router-dom';
+import {useDispatch} from "react-redux";
+import { addItemCart } from "../redux/productShipping/productShippingSlice";
+import { remove } from "../redux/productViewModal/productModalSlice";
 
 const ProductView = (props) => {
+
+    const dispatch = useDispatch(null);
+
     let product = props.data;
 
     if (product === undefined) {
@@ -62,11 +68,18 @@ const ProductView = (props) => {
 
     const addToCart = () => {
         if(check() === true){
-            console.log(color,size,quantity);
+            dispatch(addItemCart({
+                slug: product.slug,
+                color: color,
+                size: size,
+                price: price,
+                quantity: quantity
+            }))
         }
     }
 
     const goToCart = () =>{
+        dispatch(remove())
         return props.history.push("/cart");
     }
 
@@ -208,7 +221,7 @@ const ProductView = (props) => {
 };
 
 ProductView.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.object,
 };
 
 export default withRouter(ProductView);

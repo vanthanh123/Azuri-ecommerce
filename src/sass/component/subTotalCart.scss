@@ -1,0 +1,22 @@
+.subTotalCart{
+    background-color: $txt-white;
+    box-shadow: $box-shadow;
+    position: relative;
+    top: -30px;
+    width: max-content;
+    padding: 30px;
+    @include tablet{
+        top: 10px;
+    }
+
+    &__title{
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    &__content{
+        @include flex(space-between,flex-start);
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+}

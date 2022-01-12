@@ -4,10 +4,21 @@ import Button from "../component/Button";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { set } from "../redux/productViewModal/productModalSlice";
+import { addItemCart } from "../redux/productShipping/productShippingSlice";
 
 const ProductCard = (props) => {
     const data = props.data;
     const dispatch = useDispatch(null);
+    const handleAddItemCart = () => {
+        dispatch(addItemCart({
+            slug: data.slug,
+            color: data.color[0],
+            size: data.size[0],
+            price: data.sale ? (data.price * (100 - data.sale) / 100).toFixed(2) : (data.price).toFixed(2),
+            quantity: 1
+        }))
+        console.log(data);
+    }
     return (
         <div className="product-card">
             <div className="product-card__header">
@@ -33,7 +44,7 @@ const ProductCard = (props) => {
                     )}
                 </div>
                 <div className="product-card__header__button">
-                    <Button full={true} bg="black">
+                    <Button full={true} bg="black" onClick={handleAddItemCart}>
                         THÊM GIỎ HÀNG
                     </Button>
                 </div>
