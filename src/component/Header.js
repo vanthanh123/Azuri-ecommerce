@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useState,useEffect, useRef, useCallback } from "react";
 import { useSelector } from "react-redux";
+import Search from "./Search";
 
 import logo from "../assets/images/logo.png";
 
@@ -104,7 +105,7 @@ const Header = () => {
                         <div className="header__content__right col-md-3 col-sm-4 col-4">
                             <div className="header__right">
                                 <div className="search">
-                                    <i className="bx bx-search-alt-2"></i>
+                                    <Search></Search>
                                 </div>
                                 <div className="setting">
                                     <i className="bx bx-cog"></i>

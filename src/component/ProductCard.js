@@ -17,12 +17,15 @@ const ProductCard = (props) => {
             price: data.sale ? (data.price * (100 - data.sale) / 100).toFixed(2) : (data.price).toFixed(2),
             quantity: 1
         }))
-        console.log(data);
+    }
+
+    const handleOntop = () => {
+        window.scrollTo(0, 0);
     }
     return (
         <div className="product-card">
             <div className="product-card__header">
-                <Link to={`/catalog/${data.slug}`}>
+                <Link to={`/catalog/${data.slug}`} onClick={handleOntop}>
                     <div className="product-card__header__img">
                         <img src={data.img1} alt="img" />
                         <img src={data.img2} alt="img" />
@@ -50,7 +53,7 @@ const ProductCard = (props) => {
                 </div>
             </div>
             <div className="product-card__body">
-                <Link to={`/catalog/${data.slug}`}>
+                <Link to={`/catalog/${data.slug}`} onClick={handleOntop}>
                     <div className="product-card__body__title">{data.name}</div>
                 </Link>
                 <div className="product-card__body__price">

@@ -2,12 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "../component/Button";
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 
 const Slides = (props) => {
     const [activeSlide, setActiveSlide] = useState(0);
     const data = props.data;
     const automatic = props.automatic ? 3000 : "";
 
+    const handleToTop = () => {
+        window.scrollTo(0, 0);
+    }
    
 
     const prevSlide = () => {
@@ -51,7 +55,9 @@ const Slides = (props) => {
                                 {item.title}
                             </div>
                             <div className="slide__inner__content__button">
+                                <Link to={"/catalog"} onClick={handleToTop}>
                                 <Button>MUA NGAY</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

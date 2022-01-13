@@ -22,6 +22,8 @@
             box-shadow: $box-shadow;
             background-color: $txt-white;
             transform: translateX(-110%);
+            padding-bottom: 80px;
+            overflow: auto;
             &__widget{
                 &__close{
                     display: flex !important;

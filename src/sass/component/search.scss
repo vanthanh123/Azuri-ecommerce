@@ -1,0 +1,93 @@
+.search {
+    @include flex(center, center);
+    position: relative;
+
+    &__input {
+        @include flex(center, center);
+        position: relative;
+        width: 0px;
+        transition: $transition;
+        overflow: hidden;
+        margin-right: -8px;
+
+        input {
+            border: 2px solid $main-color;
+            outline: none;
+            box-shadow: $box-shadow;
+            width: inherit;
+            font-size: 16px;
+            padding-right: 8px;
+
+        }
+
+        &__close {
+            position: absolute;
+            right: 16px;
+            display: none;
+            cursor: pointer;
+
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        &.active {
+            width: 220px;
+
+            .search__input__close {
+                display: block
+            }
+
+            &~.search__icon {
+                display: none;
+            }
+            &~.search__result{
+                opacity: 1;
+                height: max-content;
+            }
+        }
+    }
+
+    &__icon {
+        cursor: pointer;
+        position: relative;
+    }
+
+    &__result {
+        width: 400px;
+        max-height: 280px;
+        box-shadow: $box-shadow;
+        position: absolute;
+        top: 30px;
+        right: -10px;
+        overflow: hidden;
+        z-index: 1000;
+        background-color: $txt-white;
+        color: $txt-black;
+        opacity: 0;
+        height: 0;
+        transition: $transition;
+        @include tablet{
+            right: 0;
+        }
+
+        @include mobile{
+            width: 240px;
+        }
+
+        &__item{
+
+            @include tablet{
+                font-size: 18px;
+            }
+            @include mobile{
+                font-size: 16px;
+            }
+        }
+
+        &__item:hover{
+            color: $main-color;
+        }
+    }
+
+}
